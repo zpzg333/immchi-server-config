@@ -1,0 +1,20 @@
+#/etc/fstab
+#폴더 마운트를 위한 설정파일
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/ubuntu-vg/ubuntu-lv during curtin installation
+/dev/disk/by-id/dm-uuid-LVM-A8Mznl2Ulkhjm0PzAX8JTUlS8vAWMdhn4KQJPuiSDgqSn0YFGoZCMtxVBE8Zo0Ha / ext4 defaults 0 1
+# /boot was on /dev/sda2 during curtin installation
+/dev/disk/by-uuid/129cb17b-4a07-468e-9b41-310fe04300b5 /boot ext4 defaults 0 1
+# /boot/efi was on /dev/sda1 during curtin installation
+/dev/disk/by-uuid/FAC3-14F7 /boot/efi vfat defaults 0 1
+/swap.img       none    swap    sw      0       0
+
+# 기존 fstab 파일에 아래 추가함
+//192.168.100.4/Root/나리 /mnt/iptime-photos cifs credentials=/home/zpzg333/immich-app/iptime-username,vers=2.0,iocharset=utf8,rw,uid=1000,gid=1000,file_mode=0664,dir_mode=0775,nounix,_netdev,nofail,x-systemd.automount 0 0 
+//192.168.100.4/Root/9999.ImmichUpload /mnt/immich-upload cifs credentials=/home/zpzg333/immich-app/iptime-username,vers=2.0,iocharset=utf8,rw,uid=1000,gid=1000,file_mode=0664,dir_mode=0775,nounix,_netdev,nofail,x-systemd.automount 0 0
