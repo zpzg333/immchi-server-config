@@ -1,0 +1,5 @@
+#/home/zpzg333/immich-app/iptime-username
+#NAS 접근을 위한 계정 정보 
+#chmod 600 처리 필요 
+username=change-this-text
+password=change-this-text
